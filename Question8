@@ -1,0 +1,36 @@
+/*8. Write a Java program to create class called "TrafficLight" with attributes for color and duration,
+ and methods to change the color and check for red or green*/
+
+
+package ranjith.assignment.three;
+
+import java.util.Scanner;
+import java.util.Date;
+public class Question7 {
+String color;
+Date currentdate=new Date();
+boolean status = false;
+void changecolor(String color) {
+	this.color=color;
+}
+ boolean isGREEN() {
+	 
+	this.color.equals(color);
+	return status== true;
+	}
+ 
+	boolean isred() {
+		this.color.endsWith(color);
+		return status == false;
+		}		
+public static void main(String[] args) {
+	Question7 obj=new Question7();
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter the colour you are traffic police:   ");
+    String r=sc.next();
+	obj.changecolor(r);
+	System.out.println(obj.isGREEN());
+	System.out.println(obj.isred());
+	
+}
+}
