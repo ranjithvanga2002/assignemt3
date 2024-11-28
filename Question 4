@@ -1,0 +1,31 @@
+/*Write a Java program to create a class called "Circle" with a radius attribute. You can access and
+ modify this attribute. Calculate the area and circumference of the circle*/
+
+
+package ranjith.assignment.three;
+
+import java.util.Scanner;
+
+public class Question4 {
+	float radius;
+    public static float Area(float radius) {
+		return (float) (radius*Math.PI);
+	}
+    public static float circumfrance(float radius) {
+    	
+    	
+		return (float) (2*radius*Math.PI);
+    }
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc= new Scanner(System.in);
+		System.out.println("enter your radius so that  i claculate the are and circumfrance:");
+		float radius=sc.nextFloat();
+		System.out.println(Area(radius));
+		System.out.println(circumfrance(radius));
+				
+	}
+
+}
