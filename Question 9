@@ -1,0 +1,30 @@
+/*Write a Java program to create a class called "Employee" with a name, salary, and hire date
+ attributes, and a method to calculate years of service*/
+
+
+
+package ranjith.assignment.three;
+
+import java.time.LocalDate;
+import java.time.Period;
+public class Question9 {
+ String name;
+ float Salary;
+ LocalDate  hireDate;
+//private LocalDate hireData;
+     
+ 
+    public Question9(String name, LocalDate hireDate, float Salary) {
+    	this.name=name;
+    	this.Salary=Salary;
+		this.hireDate=hireDate;
+    }
+    public void calculateexperience() {
+    	System.out.println("year of experience : " +Period.between(this.hireDate,LocalDate.now()).toTotalMonths()+"months");
+    }
+    
+    public static void main(String[] args) {
+    	Question9 emp=new Question9("ranjith",LocalDate.of(2020,6, 3),9000);
+    	emp.calculateexperience();
+    }
+}
