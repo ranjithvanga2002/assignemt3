@@ -1,0 +1,21 @@
+package ranjith.assignment.three;
+
+public class Question1 {
+  String name;
+  int age;
+  Question1(String name,int age){
+	  this.name=name;
+	  this.age=age;
+  }
+  
+  public static void main(String[] args){
+	  Question1 person = new Question1("ranjith",22);
+	  Question1 person1 = new Question1("ranjith1",23);
+	  System.out.println(person.name);
+	  System.out.println(person.age);
+	  System.out.println(person1.name);
+	  System.out.println(person1.age);
+	// TODO Auto-generated method stub
+
+}
+}
