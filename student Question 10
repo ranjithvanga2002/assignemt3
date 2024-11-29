@@ -1,0 +1,48 @@
+/Write a Java program to create a class called "Student" with a name, grade, and courses
+// attributes, and methods to add and remove courses
+package ranjith.assignment.three;
+
+
+
+public class Question10 {
+    String name;
+    String grade;
+    String [] course;
+	private String[] newCourses;
+    Question10(String name,String grade){
+    	this.grade=grade;
+    	this.name=name;
+    }
+    void methodtoadd(String[] course) {
+    	this.course=course;
+    }
+    void methodtoremove(Question10  s,String coursetoremove ) {
+    	String[] newCourses =new String[s.course.length];
+    	int count=0;
+    	for(int i=0;i<s.course.length;i++) {
+    		if(s.course[i].equalsIgnoreCase(coursetoremove)) {
+    			continue;
+    			}else {
+    				newCourses[count]=s.course[i];
+    				count++;
+    				
+    			}
+    	}
+    	s.course=newCourses;
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+         Question10 s1=new Question10("ranjith","b");
+         String[] newCourses= {" mangodb","Html","css","javascript"};
+         s1.methodtoadd(newCourses);
+         System.out.println("Name: " +s1.name+"   grade:  " +s1.grade);
+         for(int i=0; i < s1.course.length;i++) {
+ 			System.out.println("courses :"+s1.course[i]);
+ 		}
+         s1.methodtoremove(s1,"css");
+         for(int i=0;i<s1.course.length;i++) {
+ 			System.out.println("New courses : "+s1.course[i]);
+ 		}
+	}
+
+}
