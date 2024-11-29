@@ -1,0 +1,82 @@
+ /*  Write a Java program to create a class called "Inventory" with a collection of products and
+ methods to add and remove products, and to check for low inventory*/
+
+
+
+
+package ranjith.assignment.three;
+
+public class Inventory {
+
+    
+    public String[] products;
+    private int productCount;
+
+   
+    public Inventory(int size) {
+        products = new String[size];
+        productCount = 0; 
+    }
+    public void addProduct(String[] names) {
+        for (String name : names) {
+            if (productCount < products.length) {
+                products[productCount] = name;
+                productCount++;
+            } else {
+                System.out.println("Inventory is full, cannot add " + name);
+            }
+        }
+    }
+
+   
+    public void removeProduct(String name) {
+        boolean found = false;
+        for (int i = 0; i < productCount; i++) {
+            if (products[i].equals(name)) {
+
+                for (int j = i; j < productCount - 1; j++) {
+                    products[j] = products[j + 1];
+                }
+                products[productCount - 1] = null;
+                productCount--;
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            System.out.println(name + " not found ");
+        }
+    }
+
+    public void checkLowInventory() {
+        System.out.println(" inventory products less than 5 items");
+        if (productCount < 5) {
+            for (int i = 0; i < productCount; i++) {
+                System.out.println(products[i]);
+            }
+        } else {
+            System.out.println("products ok ");
+        }
+    }
+
+   
+    public static void main(String[] args) {
+        Inventory inventory = new Inventory(5);
+
+ 
+        String[] productNamesInput = {"cucumber", "apple", "Orange", "grapes","bottleguard"};
+
+    
+        inventory.addProduct(productNamesInput);
+
+      
+        inventory.checkLowInventory();
+
+       
+        inventory.removeProduct("apple");
+        inventory.removeProduct("grapes");
+
+      
+        inventory.checkLowInventory();
+    }
+}
